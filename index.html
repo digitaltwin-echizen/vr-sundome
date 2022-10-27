@@ -30,19 +30,19 @@
   
 <script type="module">
 let scale = 1;
+const step = 1.2;
 const scaleUp = () => {
   if (scale >= 1) {
     return;
   }
-  scale *= 1.05;
-  console.log(scale);
+  scale *= step;
   sundome.setAttribute("scale", { x: scale, y: scale, z: scale });
 };
 const scaleDown = () => {
   if (scale < 0.001) {
     return;
   }
-  scale /= 1.05;
+  scale /= step;
   sundome.setAttribute("scale", { x: scale, y: scale, z: scale });
 };
 handright.addEventListener("bbuttondown", scaleUp);
